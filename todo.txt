@@ -4,7 +4,7 @@
 
 12.02.2013
 
-Create a repository and release the code under BSD license.
+*Create a repository and release the code under BSD license.
 *Decrease font size a little to make room for '(beta)' text.
 *Bug when clicking on example.
 *Add 'beta' to the title.

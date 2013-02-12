@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>o-clock.no</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+<script type="text/javascript">
+	
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-38407474-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+ var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+ s.type = 'text/javascript';
+ s.async = true;
+ s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+ t.parentNode.insertBefore(s, t);
+ })();
+/* ]]> */</script>
+<script src="calendar.js"></script>
+<style>
+	body {
+		background-color: #222222;
+		color: #888888;
+		margin: 0px;
+		padding: 0px;
+	}
+	input {
+		background-color: #bbbbbb;
+	}
+	a {
+		color: #888888;
+	}
+	canvas {
+		outline: none;
+	}
+	p {
+		margin: 0px;
+	}
+	textarea {
+		background-color: #888888;
+	}
+</style>
+</head>
+	<body onload="onLoad();">
+		<p>
+		<div style="float: left;">
+		<a href="http://www.cutoutpro.com" target="_blank">Cutout Pro</a> |
+		<a href="index.html?data=1511708%2C6%2C22%2C600%2C400%2C12%3A1511780%2C1511792%2CFUN%2C1511876%2C1511888%2CFUN%2C1511972%2C1511984%2CFUN%2C1512068%2C1512080%2CFUN%2C1512164%2C1512176%2CFUN%2C1512316%2C1512316%2CWORK%2C1511740%2C1511772%2CWORK%2C1511836%2C1511868%2CWORK%2C1511932%2C1511964%2CWORK%2C1512028%2C1512060%2CWORK%2C1512124%2C1512156%2CWORK%2C1512356%2C1512356%2CFUN%2C" target="_blank">Example</a> |
+		<a href="manual.txt" target="_blank">Manual</a> |</div>
+		<div style="float: left;" id="quote">"This site requires Javascript enabled"</div>&nbsp;
+		<a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="http://www.o-clock.no"></a>
+		<noscript><a href="http://flattr.com/thing/1133972/o-clock" target="_blank">
+			<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a></noscript>
+		<br />
+		</p>
+<canvas tabindex="0" id="calendar" width="600" height="400"></canvas>
+<table>
+<tr>
+	<td>From Date: <input type="text" id="fromDate" /></td>
+	<td>Start Hour: <input onchange="onChangeHour();" size="2" maxlength="2" type="text" id="startHour" /></td>
+	<td>End Hour: <input onchange="onChangeHour();" size="2" maxlength="2" type="text" id="endHour" /></td>
+	<td><input type="button" onclick="onClear();" value="Clear" /></td>
+	<td><input type="button" onclick="onLink();" value="Update Url" /></td>
+</tr>
+<tr>
+	<td colspan="5">
+		<textarea hidden="true" cols="80" rows="10" id="linkText"></textarea>
+	</td>
+</tr>
+</table>
+<p>
+	&nbsp;<br />
+	&nbsp;<br />
+	&nbsp;<br />
+	&nbsp;<br />
+	&nbsp;<br />
+	&nbsp;<br />
+	&nbsp;<br />
+	&nbsp;<br />
+</p>
+	
+</body>
+</html>

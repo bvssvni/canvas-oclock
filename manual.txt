@@ -1,0 +1,64 @@
+
+O-CLOCK.NO	V.000
+Created by Sven Nilsen (www.cutoutpro.com)
+
+HOW TO SAVE
+
+The data is stored in the Url.
+
+1. Click "Update Url".
+2. Bookmark the webaddress.
+3. You can now reopen the calendar by clicking on the bookmark.
+
+ADD NEW TASK
+
+1. In the calendar, press left mouse button and drag.
+2. Release the mouse button.
+3. Type in a text, use a short name.
+4. Press 'Enter' key on the keyboard.
+
+ADD MULTIPLE TASKS
+
+1. In the calendar, press left mouse button and drag.
+2. Drag the mouse across multiple lines.
+3. Type in a text, use a short name.
+4. Press 'Enter' on the keyboard.
+
+ADD MILESTONE
+
+1. In the calendar, click with left mouse button.
+2. Type in a name. Use same name as for task to sum.
+3. Press 'Enter' on the keyboard.
+4. The milestone will appear with the sum in front of name.
+
+DELETE TASK
+
+1. In the calendar, press left mouse button and drag.
+2. Select a an area covering the task you want to delete.
+3. Press 'Backspace' on the keyboard.
+4. The task should now disappear.
+
+DELETE MILESTONE
+
+1. In the calendar, click on the milestone.
+2. Press 'Backspace' on the keyboard.
+3. The milestone should now disappear.
+
+GENERATE LINK
+
+1. Add the tasks you want to share to the calendar.
+2. Click the 'Link' button.
+3. The url address of the site should change.
+4. Copy the link and send it by email, twitter etc.
+
+CLEAR CALENDAR
+
+1. Click the 'Clear' button.
+2. The url address of the site should change.
+
+EXPAND
+
+1. Move the cursor to the right or bottom edge of the calendar until cursor changes.
+2. Click with the mouse button.
+3. Move the mouse button until you got the size you want.
+4. Click with the mouse button to set the size.

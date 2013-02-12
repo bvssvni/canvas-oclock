@@ -1,0 +1,137 @@
+* Completed on same day.
++ Completed on later day.
+- Decided against on later day.
+
+12.02.2013
+
+Create a repository and release the code under BSD license.
+*Decrease font size a little to make room for '(beta)' text.
+*Bug when clicking on example.
+*Add 'beta' to the title.
+*Make the text on a milestone appear in turqiose.
+*Make the tiny line disappear on milestones.
+*Expand the control by dragging.
+*Set in 'flattr' button on the webpage.
+
+11.02.2013
+
+*Bug in Firefox not showing quotes.
+*Bug when splitting with inverse selection.
+*Make align to 24 when the other is larger than the middle.
+*Make milestones registered at 0 o'clock appear at 24.
+*Bug when selecting from bottom-left to upper-right.
+*Round hit selection.
+*Put in analytics.
+*Put in example.
+*Put in tips that shows randomly.
+*Set title on the website.
+*Icon for the website.
+*Bug when selecting and clears sets start hour to 8.
+
+10.02.2013
+
+Create pitch sentence.
+*Document how to save.
+*Add company and name in manual.
+*Hide the url textarea, because it's ugly.
+*Document how to expand the window.
+*Bug when selecting inverted and using backspace.
+*Set gray brackground color on textarea.
+*Create a field that contains the web address.
+*Replace "Link" with "Update Url".
+*Don't add empty milestone.
+*Document how to add a milestone.
+*Clear a different color so it gets easier to see the border.
+*Add more space to the right of control.
+*Sum one milestone for only activities after the previous milestone.
+*Sum up the hours put into a milestone and display it as a milestone.
+*Make milestones easy to read on top of activity.
+*Draw milestones on top.
+*Only subtract milestone with milestones.
+*Don't subtract milestone.
+*Draw tasks that have length 0 as a mile stone.
+*Remove the border when selected canvas.
+*Render 'o-clock.no' in the canvas.
+*Add title to manual file.
+*Add a link to manual.
+*Allow space to be added to text.
+*Upload version to o-clock.no.
+*Only clip when not selected.
+*Move javascript to own file.
+*Add clipping of text.
+*Change background of input field to gray.
+*Bug when selecting in opposite direction.
+*Bug of selected hours and lines.
+*Bug when inserting at 0.
+*Bug can't select all the way to the edge.
+*Bug can't set 24 as last hour.
+*Use colors that matches.
+*Allow numbers to be used as names.
+*Add a color mapping from hash of a string set as background.
+*Add a semi-transparent background to tasks.
+*Bug that draws selected area wrong when start hour is large.
+*Don't allow negative values for start hour.
+*Create document that tells how to use the calendar.
+*Document how to clear the calendar.
+*Document how to create a link.
+*Document how to add multiple tasks.
+*When adding a task, add one for each day.
+*When deleting a task, make the selection go away.
+*Document how to delete a task.
+*Document how one add a task the calendar.
+*When adding new task, subtract before adding.
+*When hitting backspace and description is empty, subtract from tasks.
+*Add the size of the calendar to link data.
+*Bug when changing date, affecting the hours.
+*Add from date and start and end hour to link data.
+*Make interval visible when end is outside visible area.
+*Button that clears the link.
+*Button that generates link.
+*Collection of tasks.
+*Selected interval description.
+*Draw hours and dates when selection is inverted.
+*Make lines more visible.
+*Don't select outside visible area.
+*Clear canvas with transparent.
+*Add a margin area to the right and to the bottom.
+*Make it possible to select interval with mouse.
+*Change background color to dark gray.
+*Draw borders instead of fill with selected interval.
+*Make selected interval clipped on the visible hours.
+*Show dates of selected quarter interval in white.
+*Show hours of selected quarter interval in white.
+*Render selected quarter.
+*Fields for selected quarter interval.
+*Function that gets the hour of quarter.
+*Function that gets the line of quarter.
+*Function that render time between two quarters.
+*Function that converts quarter to position.
+*Function that converts from coordinates to quarters.
+*Make it possible to scroll a bit further down the page.
+*Set minimum width and height of resize.
+*Make canvas resizable.
+*When I change the start or end hour, update canvas.
+*When I change the from date, update the canvas.
+*Add weekday name to column on left side.
+*Draw dates in the column on left side.
+*Parse date function.
+*Set maximum size at hour fields.
+*Remove the to date field.
+*Draw time in the header.
+
+09.02.2013
+
++Draw time in the header.
+*Create a function that calculates the visible hours.
+*Draw time lines.
+*Display from and to date when loading page.
+*Create a function that formats a date.
+*Display start and end hour when loading page.
+*Create controls for selecting start time point and end point.
+*Create a control for selecting a date.
+*Create an object for project.
+*Create an object for tasks.
+*Create lines for each day.
+*Create a column to left beneath header.
+*Create a header on top.
+*Fill background with black to test.

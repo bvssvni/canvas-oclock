@@ -84,6 +84,7 @@ var left_column_style = "#333333";
 var right_column_width = 80;
 var line_height = header_height;
 var line_width = 1;
+var line_week_width = 2;
 var line_style = "#888888";
 var date_font = "17px Georgia";
 var date_font_style = "#888888";
@@ -110,7 +111,7 @@ var selected_quarter_line_width = 3;
 var selected_description = "";
 var selected_quarter_font = "17px Georgia";
 var default_quarter_font = "17px Georgia";
-var default_quarter_style = "rgba(204, 204, 204, 0.5)";
+var default_quarter_style = "rgba(204, 204, 204, 1)";
 var milestone_style = "#cccccc";
 var selected_milestone_style = "#00FFFF";
 var default_quarter_background = "rgba(0, 0, 150, 0.5)";
@@ -619,13 +620,20 @@ function renderSelectedQuarter() {
 }
 
 function renderLines() {
-	ctx.lineWidth = line_width;
 	ctx.strokeStyle = line_style;
 	
+	var startDay = from_date.getDay();
 	var start = 0;
 	var end = visibleDays();
 	var w = visibleWidth() + left_column_width;
 	for (var i = start; i < end; i++) {
+		var isSunday = (startDay + i + 6) % 7 == 0;
+		if (isSunday) {
+			ctx.lineWidth = line_week_width;
+		} else {
+			ctx.lineWidth = line_width;
+		}
+		
 		var y = header_height + i * line_height;
 		renderLine(ctx, 0, y, w, y);
 	}

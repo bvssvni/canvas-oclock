@@ -24,19 +24,24 @@ ADD MULTIPLE TASKS
 3. Type in a text, use a short name.
 4. Press 'Enter' on the keyboard.
 
-ADD MILESTONE
-
-1. In the calendar, click with left mouse button.
-2. Type in a name. Use same name as for task to sum.
-3. Press 'Enter' on the keyboard.
-4. The milestone will appear with the sum in front of name.
-
 DELETE TASK
 
 1. In the calendar, press left mouse button and drag.
 2. Select a an area covering the task you want to delete.
 3. Press 'Backspace' on the keyboard.
 4. The task should now disappear.
+
+MILESTONES
+
+Milestone sums up the hours of tasks with same name.
+For example, if you add 4 hours of "WORK" after a milestone named "WORK",
+the next milestone with name "WORK" will display '4' in front of its name.
+
+ADD MILESTONE
+
+1. In the calendar, click with left mouse button, but not drag.
+2. Type in a name for the milestone.
+3. Press 'Enter' on the keyboard.
 
 DELETE MILESTONE
 

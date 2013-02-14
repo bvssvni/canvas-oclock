@@ -2,8 +2,14 @@
 + Completed on later day.
 - Decided against on later day.
 
+13.02.2013
+
+Add tooltip when holding mouse over an activity.
+
 12.02.2013
 
+*Add thicker line between Sunday and Monday.
+*Make the letters have better contrast.
 *Create a repository and release the code under BSD license.
 *Decrease font size a little to make room for '(beta)' text.
 *Bug when clicking on example.

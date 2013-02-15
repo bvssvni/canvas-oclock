@@ -36,6 +36,11 @@
  
  */
 
+function mousePos(canvas, event) {
+	var rect = canvas.getBoundingClientRect();
+	return [event.clientX - rect.left, event.clientY - rect.top];
+}
+
 // Formats a date.
 function formatDate(date) {
 	var d = date.getDate()
@@ -865,55 +870,62 @@ function makeAddTask(id) {
 function makeSelectQuarterInterval(id) {
 	var box = document.getElementById(id);
 	var selectInterval = false;
-	box.addEventListener
-	("mousedown",
-	 function (event) {
-		 event = event || window.event;
-		 var x = event.pageX - box.offsetLeft;
-		 var y = event.pageY - box.offsetTop;
-		 
-		 var q = posToQuarters(x, y);
-		 var h = quarterIntervalHours(q, q+1)[0];
-		 var line = quarterIntervalLines(q, q+1)[0];
-		 if (h >= end_hour ||
-			 h < start_hour ||
-			 line < 0 ||
-			 line >= visibleDays() - 1) {
+	
+	var mousedown = function(event) {
+		event = event || window.event;
+		var pos = mousePos(box, event);
+		var x = pos[0];
+		var y = pos[1];
+		
+		var q = posToQuarters(x, y);
+		var h = quarterIntervalHours(q, q+1)[0];
+		var line = quarterIntervalLines(q, q+1)[0];
+		if (h >= end_hour ||
+			h < start_hour ||
+			line < 0 ||
+			line >= visibleDays() - 1) {
 			return true;
-		 }
-		 
-		 selected_quarter_start = q;
-		 selected_quarter_end = q;
-		 selectInterval = true;
-		 selected_description = "";
-		 
-		 renderCalendar();
-	 return false;
-	 }, true);
-	box.addEventListener
-	("mousemove",
-	 function (event) {
-		 event = event || window.event;
-		 var x = event.pageX - box.offsetLeft;
-		 var y = event.pageY - box.offsetTop;
-		 
-		 if (selectInterval) {
+		}
+		
+		selected_quarter_start = q;
+		selected_quarter_end = q;
+		selectInterval = true;
+		selected_description = "";
+		
+		renderCalendar();
+		return false;
+
+	};
+	
+	box.addEventListener("mousedown", mousedown, true);
+	
+	var mousemove = function(event) {
+		event = event || window.event;
+		var pos = mousePos(box, event);
+		var x = pos[0];
+		var y = pos[1];
+		
+		if (selectInterval) {
 			selected_quarter_end = posToQuarters(x, y);
-		 }
+		}
+		
+		renderCalendar();
+	};
+	
+	box.addEventListener("mousemove", mousemove, true);
+	
+	var mouseup = function(event) {
+		event = event || window.event;
+		var pos = mousePos(box, event);
+		var x = pos[0];
+		var y = pos[1];
 		 
-		 renderCalendar();
-	 }, true);
-	box.addEventListener
-	("mouseup",
-	 function (event) {
-		 event = event || window.event;
-		 var x = event.pageX - box.offsetLeft;
-		 var y = event.pageY - box.offsetTop;
+		selectInterval = false;
 		 
-		 selectInterval = false;
-		 
-		 renderCalendar();
-	 }, true);
+		renderCalendar();
+	}
+	
+	box.addEventListener("mouseup", mouseup, true);
 }
 
 function makeResizeable(id, margin, minWidth, minHeight, refreshFunc) {
@@ -926,8 +938,9 @@ function makeResizeable(id, margin, minWidth, minHeight, refreshFunc) {
 	var downHeight = 0;
 	
 	var refreshCursor = function (event) {
-		var x = event.pageX - box.offsetLeft;
-		var y = event.pageY - box.offsetTop;
+		var pos = mousePos(box, event);
+		var x = pos[0];
+		var y = pos[1];
 		
 		if (expandRight || expandDown) {
 			box.style.cursor = "crosshair";
@@ -943,49 +956,51 @@ function makeResizeable(id, margin, minWidth, minHeight, refreshFunc) {
 		}
 	}
 	
-	document.addEventListener
-	("mousemove",
-	 function (event) {
-		 var x = event.pageX - box.offsetLeft;
-		 var y = event.pageY - box.offsetTop;
-		 
-		 if (expandRight) {
-			 var w = downWidth + (x - downX);
-			 w = w < minWidth ? minWidth : w;
-			 box.width = w;
-			 
-			 refreshFunc();
-		 }
-		 if (expandDown) {
-			 var h = downHeight + (y - downY);
-			 h = h < minHeight ? minHeight : h;
-			 box.height = h;
-			 
-			 refreshFunc();
-		 }
-		 refreshCursor(event);
-	 }, true);
-	document.addEventListener
-	("mouseup",
-	 function (event) {
-		 if (expandRight || expandDown) {
+	var mousemove = function(event) {
+		var pos = mousePos(box, event);
+		var x = pos[0];
+		var y = pos[1];
+
+		if (expandRight) {
+			var w = downWidth + (x - downX);
+			w = w < minWidth ? minWidth : w;
+			box.width = w;
+
+			refreshFunc();
+		}
+		if (expandDown) {
+			var h = downHeight + (y - downY);
+			h = h < minHeight ? minHeight : h;
+			box.height = h;
+
+			refreshFunc();
+		}
+		refreshCursor(event);
+	};
+	
+	document.addEventListener("mousemove", mousemove, true);
+	
+	var mouseup = function(event) {
+		if (expandRight || expandDown) {
 			 expandRight = false;
 			 expandDown = false;
 			 return false;
 		 }
-	 }, true);
-	box.addEventListener
-	("mousedown",
-	 function (event) {
-		 if (expandRight || expandDown) {
+	};
+	
+	document.addEventListener("mouseup", mouseup, true);
+	
+	var mousedown = function(event) {
+		if (expandRight || expandDown) {
 			 expandRight = false;
 			 expandDown = false;
 		 }
 	 
 		 event = event || window.event;
 		 
-		 var x = event.pageX - box.offsetLeft;
-		 var y = event.pageY - box.offsetTop;
+		 var pos = mousePos(box, event);
+		 var x = pos[0];
+		 var y = pos[1];
 		 
 		 if (x > box.width - margin) {
 			expandRight = true;
@@ -1003,7 +1018,9 @@ function makeResizeable(id, margin, minWidth, minHeight, refreshFunc) {
 		 if (expandRight || expandDown) {
 			return false;
 		 }
-	 }, true);
+	};
+	
+	box.addEventListener("mousedown", mousedown, true);
 }
 
 function makeTaskTooltipOnMouseOver(id) {
@@ -1011,8 +1028,9 @@ function makeTaskTooltipOnMouseOver(id) {
 	var mousemove = function (event) {
 		event = event || window.event;
 		
-		var x = event.pageX - box.offsetLeft;
-		var y = event.pageY - box.offsetTop;
+		var pos = mousePos(box, event);
+		var x = pos[0];
+		var y = pos[1];
 		
 		var q = posToQuarters(x, y);
 		var found = false;

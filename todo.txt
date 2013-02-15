@@ -4,7 +4,8 @@
 
 15.02.2013
 
-Change function to getting the mouse position.
+*Declare functions locally instead of passing as parameters.
+*Change function for mouse position.
 *Add tooltip when holding mouse over an activity.
 *Hide the sum when milestone is 0.
 

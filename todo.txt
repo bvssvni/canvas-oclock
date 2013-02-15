@@ -4,6 +4,7 @@
 
 15.02.2013
 
+Add link to 'links'.
 *Declare functions locally instead of passing as parameters.
 *Change function for mouse position.
 *Add tooltip when holding mouse over an activity.

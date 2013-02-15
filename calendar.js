@@ -598,7 +598,7 @@ function renderTasks() {
 		}
 		
 		var sumStr = "";
-		if (task.description != "") {
+		if (task.description != "" && task.sum > 0) {
 			sumStr = task.sum + " ";
 		}
 				
@@ -1006,6 +1006,32 @@ function makeResizeable(id, margin, minWidth, minHeight, refreshFunc) {
 	 }, true);
 }
 
+function makeTaskTooltipOnMouseOver(id) {
+	var box = document.getElementById(id);
+	var mousemove = function (event) {
+		event = event || window.event;
+		
+		var x = event.pageX - box.offsetLeft;
+		var y = event.pageY - box.offsetTop;
+		
+		var q = posToQuarters(x, y);
+		var found = false;
+		for (var i = 0; i < tasks.length; i++) {
+			var task = tasks[i];
+			if (task.quarterStart <= q && task.quarterEnd > q) {
+				box.title = task.description;
+				found = true;
+				break;
+			}
+		}
+		
+		if (!found) {
+			box.title = "";
+		}
+	}
+	box.addEventListener("mousemove", mousemove, true);
+}
+
 function refreshSelection() {
 	selected_quarter_start = dateInQuarters(from_date) + start_hour * 4;
 	selected_quarter_end = selected_quarter_start + 8;
@@ -1027,6 +1053,7 @@ function onLoad() {
 				   renderCalendar); // function to render graphics.
 	makeSelectQuarterInterval(calendar);
 	makeAddTask(calendar);
+	makeTaskTooltipOnMouseOver(calendar);
 	
 	refreshHours();
 	refreshFromDate();

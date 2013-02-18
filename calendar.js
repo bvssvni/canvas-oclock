@@ -66,19 +66,19 @@ var quotes = [
 "Waiting for something to happen, is 100% waste of time.",
 "Failing to plan equals planning to fail.",
 "Focus is a matter of deciding what things you're not going to do.",
-"You can click the link 'Manual' if you get stuck.",
+"Click the link 'Manual' if you get stuck.",
 "Tip: Use short descriptions, they are easier to remember.",
 "Heard of milestones? Read about them in the 'Manual'.",
 "<--- There, there 'Manual', it's there!",
 "Select multiple days to insert repeating tasks.",
 "The color of task changes dependent on the description.",
-"Give a milestone same name as tasks to sum hours.",
+"To sum hours, give a milestone same name as tasks.",
 "Use 'backspace' to delete.",
 "Insert task by selecting, type description and then 'enter'.",
-"You can expand the view on the right or bottom edge.",
+"Expand the calendar by dragging the right or bottom edge.",
 "The settings under the calendar controls the view.",
 "Click 'Update Url' before you bookmark.",
-"Share with other people, by clicking 'Update Url' and copy the web address."
+"To share with other people, by clicking 'Update Url' and copy the web address."
 ];
 
 var background_style = "#303030";

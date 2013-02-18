@@ -2,6 +2,13 @@
 + Completed on later day.
 - Decided against on later day.
 
+18.02.2013
+
+*Add link to 'pxl'.
+*Bug when expanding the calendar downwars, flashes background.
+*Remove 'you' words from quotes.
+*Add logo.
+
 15.02.2013
 
 *Add link to 'links'.
